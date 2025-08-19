@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Show custom cursor only on devices that actually have a mouse */
+@media (hover: hover) and (pointer: fine) {
+
+    html,
+    body,
+    #root,
+    * {
+        cursor: none !important;
+    }
+}
