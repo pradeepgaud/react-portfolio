@@ -20,7 +20,7 @@ function Home() {
   };
 
   // Alternative Method 2: Using public folder (अगर public/resume/pradeep_gaud.pdf में file है)
-  const handleDownloadCVAlternative = () => {
+  const handleDownloadCVAlternativeone = () => {
     const link = document.createElement("a");
     link.href = "/resume/pradeep_gaud.pdf"; // public folder से relative path
     link.download = "pradeep_gaud.pdf";
