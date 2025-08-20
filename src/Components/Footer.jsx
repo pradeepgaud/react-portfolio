@@ -38,14 +38,17 @@ function Footer() {
 
           {/* Center - Phone Number */}
           <div className="flex items-center gap-3 mb-4 md:mb-0">
-            <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-full border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 hover:transform hover:scale-105">
+            <a 
+              href="tel:+918824626379"
+              className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-full border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer"
+            >
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                 <Phone className="w-4 h-4 text-white" />
               </div>
               <span className="text-white font-medium tracking-wider">
                 +91 8824626379
               </span>
-            </div>
+            </a>
           </div>
 
           {/* Right Side - Copyright & Scroll to Top */}

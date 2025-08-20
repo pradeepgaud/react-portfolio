@@ -42,56 +42,56 @@ function Project() {
     >
       {/* Enhanced Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-96 h-96 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
-        <div className="absolute -bottom-40 -left-32 w-96 h-96 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-float-delayed"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slow"></div>
-        <div className="absolute top-1/2 right-1/4 w-60 h-60 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-bounce-slow"></div>
+        <div className="absolute -top-40 -right-32 w-96 h-96 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float sm:-top-20 sm:-right-16 sm:w-48 sm:h-48"></div>
+        <div className="absolute -bottom-40 -left-32 w-96 h-96 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-float-delayed sm:-bottom-20 sm:-left-16 sm:w-48 sm:h-48"></div>
+        <div className="absolute top-40 left-40 w-80 h-80 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slow sm:top-20 sm:left-20 sm:w-40 sm:h-40"></div>
+        <div className="absolute top-1/2 right-1/4 w-60 h-60 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-bounce-slow sm:w-32 sm:h-32"></div>
       </div>
 
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
-      <div className="relative z-10 container mx-auto px-6 py-16">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-8 sm:py-16">
         {/* Enhanced Header with animated elements */}
-        <div className="text-center mb-20 relative">
+        <div className="text-center mb-12 sm:mb-20 relative">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+            <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 relative animate-fade-in-up">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-4 sm:mb-6 relative animate-fade-in-up">
             My Recent{" "}
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
               Works
             </span>
           </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-4 rounded-full animate-fade-in"></div>
-          <p className="text-gray-300 text-xl max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delayed">
+          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-4 rounded-full animate-fade-in"></div>
+          <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delayed px-4">
             Here are a few projects I've worked on recently. Each one represents
             hours of passion, creativity, and problem-solving.
           </p>
         </div>
 
         {/* Enhanced Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-3xl p-8 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-500 hover:transform hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-blue-500/25 animate-fade-in-up"
+              className="group relative bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-500 hover:transform hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-blue-500/25 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Animated border effect */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-              <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-br from-gray-900/90 via-black/80 to-gray-900/90 backdrop-blur-xl"></div>
+              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+              <div className="absolute inset-[1px] rounded-2xl sm:rounded-3xl bg-gradient-to-br from-gray-900/90 via-black/80 to-gray-900/90 backdrop-blur-xl"></div>
 
               <div className="relative z-10">
                 {/* Enhanced Project Image */}
-                <div className="relative overflow-hidden rounded-2xl mb-8 bg-gradient-to-br from-gray-800 via-gray-900 to-black h-52 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-500">
+                <div className="relative overflow-hidden rounded-xl sm:rounded-2xl mb-6 sm:mb-8 bg-gradient-to-br from-gray-800 via-gray-900 to-black h-40 sm:h-52 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-500">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`}
                   ></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="relative z-10 text-white/80 transform group-hover:scale-110 transition-transform duration-500 drop-shadow-lg">
                     {React.cloneElement(project.icon, {
-                      className: "w-12 h-12",
+                      className: "w-8 h-8 sm:w-12 sm:h-12",
                     })}
                   </div>
 
@@ -112,8 +112,8 @@ function Project() {
                 </div>
 
                 {/* Enhanced Project Content */}
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                <div className="space-y-4 sm:space-y-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
                     {project.title}
                   </h3>
 
@@ -122,37 +122,37 @@ function Project() {
                   </p>
 
                   {/* Enhanced Action Buttons */}
-                  <div className="flex gap-4 pt-6">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
                     <a
                       href={project.githubUrl}
-                      className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 hover:from-blue-600/40 hover:to-blue-500/40 border border-blue-500/30 hover:border-blue-400/50 rounded-xl text-white transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm"
+                      className="flex items-center justify-center sm:justify-start gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 hover:from-blue-600/40 hover:to-blue-500/40 border border-blue-500/30 hover:border-blue-400/50 rounded-lg sm:rounded-xl text-white transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm text-sm sm:text-base"
                     >
-                      <Github size={18} />
-                      <span className="text-sm font-medium">GitHub</span>
+                      <Github size={16} className="sm:w-[18px] sm:h-[18px]" />
+                      <span className="font-medium">GitHub</span>
                     </a>
 
                     <a
                       href={project.demoUrl}
-                      className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-pink-600/20 hover:from-purple-600/40 hover:to-pink-600/40 border border-purple-500/30 hover:border-pink-400/50 rounded-xl text-white transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 backdrop-blur-sm"
+                      className="flex items-center justify-center sm:justify-start gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-purple-600/20 to-pink-600/20 hover:from-purple-600/40 hover:to-pink-600/40 border border-purple-500/30 hover:border-pink-400/50 rounded-lg sm:rounded-xl text-white transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 backdrop-blur-sm text-sm sm:text-base"
                     >
-                      <ExternalLink size={18} />
-                      <span className="text-sm font-medium">Demo</span>
+                      <ExternalLink size={16} className="sm:w-[18px] sm:h-[18px]" />
+                      <span className="font-medium">Demo</span>
                     </a>
                   </div>
                 </div>
               </div>
 
               {/* Enhanced Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-600/0 via-blue-600/10 to-purple-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-600/0 via-blue-600/10 to-purple-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           ))}
         </div>
 
         {/* Enhanced Bottom CTA */}
-        <div className="text-center mt-20">
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full text-white font-semibold hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 cursor-pointer animate-bounce-gentle backdrop-blur-sm border border-white/10">
-            <Github size={22} />
-            <span className="text-base">View More Projects</span>
+        <div className="text-center mt-12 sm:mt-20">
+          <div className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full text-white font-semibold hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 cursor-pointer animate-bounce-gentle backdrop-blur-sm border border-white/10 text-sm sm:text-base">
+            <Github size={18} className="sm:w-[22px] sm:h-[22px]" />
+            <span>View More Projects</span>
             <div className="w-2 h-2 bg-white/80 rounded-full animate-pulse"></div>
           </div>
         </div>
