@@ -45,11 +45,11 @@ function Home() {
       >
         <div className="container mx-auto max-w-6xl">
           {/* Mobile Layout */}
-          <div className="block md:hidden text-center space-y-6">
+          <div className="block md:hidden text-center space-y-4">
             {/* Profile Image - Top on mobile */}
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 p-1 ">
+                <div className="w-40 h-40 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 p-1 ">
                   <img
                     src={profileImg}
                     alt="Profile"
@@ -67,7 +67,7 @@ function Home() {
             </div>
 
             {/* Content */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <h1 className="text-4xl font-extrabold leading-tight">
                 FULL STACK <br />
                 <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -80,7 +80,7 @@ function Home() {
               </p>
 
               {/* Mobile Layout Buttons */}
-              <div className="flex gap-3 pt-2">
+              <div className="flex gap-3 pt-1">
                 {/* First Button - gradient bg */}
                 <button
                   onClick={handleGetInTouch}
