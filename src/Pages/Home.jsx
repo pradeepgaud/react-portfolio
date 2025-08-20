@@ -1,5 +1,7 @@
 import React from "react";
 import profileImg from "../assets/project/home.jpg";
+// Resume को import करें
+import resumePDF from "../assets/resume/pradeep_gaud.pdf";
 import Skills from "../Components/Skills";
 import About from "./About";
 import Project from "./Project";
@@ -7,29 +9,32 @@ import Contact from "./Contact";
 import Footer from "../Components/Footer";
 
 function Home() {
-  // Handle CV download
+  // Handle CV download - Method 1: Using import
   const handleDownloadCV = () => {
-    // Replace 'cv.pdf' with your actual CV file path
-    const cvUrl = "/src/assets/resume/pradeep_gaud.pdf"; // Put your PDF in public folder as cv.pdf
-
-    // Create a temporary anchor element to trigger download
     const link = document.createElement("a");
-    link.href = cvUrl;
-    link.download = "pradeep_gaud.pdf"; // This will be the downloaded filename
+    link.href = resumePDF;
+    link.download = "pradeep_gaud.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  // Handle get in touch - you can modify this as needed
+  // Alternative Method 2: Using public folder (अगर public/resume/pradeep_gaud.pdf में file है)
+  const handleDownloadCVAlternative = () => {
+    const link = document.createElement("a");
+    link.href = "/resume/pradeep_gaud.pdf"; // public folder से relative path
+    link.download = "pradeep_gaud.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Handle get in touch
   const handleGetInTouch = () => {
-    // Scroll to contact section or open email
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
-    // Alternative: Open email client
-    // window.location.href = 'mailto:your.email@example.com';
   };
 
   return (
