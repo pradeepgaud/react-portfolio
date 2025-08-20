@@ -1,39 +1,75 @@
-import React from "react";
-import { Github, ExternalLink, Code, MessageSquare, Edit3 } from "lucide-react";
+import React, { useState } from "react";
+import { Github, ExternalLink, Code, MessageSquare, Edit3, ChevronDown, ChevronUp } from "lucide-react";
 
 function Project() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   const projects = [
     {
-      title: "Chatify",
+      title: "Gaur-Booking",
       description:
-        "Personal Chat Room or Workspace to share resources and hangout with friends build with reactjs, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages.",
-      image: "/api/placeholder/400/250",
-      githubUrl: "#",
-      demoUrl: "#",
+        "A full-stack MERN booking platform where users can create, update, and delete listings, add ratings, and make bookings. Built with JWT authentication, secure login/logout, and role-based access. Admins can manage and even cancel bookings.",
+      image: "/src/assets/project/gaur-booking.png",
+      githubUrl: "https://github.com/pradeepgaud/gaur_booking",
+      demoUrl: "https://gaur-booking-1.onrender.com/",
       icon: <MessageSquare className="w-6 h-6" />,
       gradient: "from-blue-500/20 to-purple-600/20",
     },
     {
-      title: "Bits-of-Code",
+      title: "Baby-Care",
       description:
-        "My personal blog page build with Next.js and Tailwind Css which takes the content from markdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown.",
-      image: "/api/placeholder/400/250",
-      githubUrl: "#",
-      demoUrl: "#",
+        "A MERN stack Baby-Care management app where admins can create, update, and delete events. Built with MongoDB, Express, React, and Node.js, providing a complete event management system with a secure backend and dynamic frontend",
+      image: "/src/assets/project/baby-care.png",
+      githubUrl: "https://github.com/pradeepgaud/baby-care",
+      demoUrl: "https://baby-care-1sjs.onrender.com/",
       icon: <Code className="w-6 h-6" />,
       gradient: "from-green-500/20 to-blue-600/20",
     },
     {
-      title: "Editorio",
+      title: "Authentication",
       description:
-        "Online code and markdown editor build with reactjs. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview. Both the editor supports auto save of work using Local Storage.",
-      image: "/api/placeholder/400/250",
-      githubUrl: "#",
-      demoUrl: "#",
+        "A secure MERN stack authentication system with JWT-based login/signup, bcrypt password hashing, and protected routes to ensure safe user access",
+      image: "/src/assets/project/authentication.png",
+      githubUrl: "https://github.com/pradeepgaud/authentication",
+      demoUrl: "https://authentication-gaur-tau.vercel.app/",
       icon: <Edit3 className="w-6 h-6" />,
       gradient: "from-purple-500/20 to-pink-600/20",
     },
+    {
+      title: "Ahency",
+      description:
+        "A modern and visually appealing agency website built with React, featuring smooth animations, responsive design, and an engaging user interface for clients, Added smooth animations for better user engagement",
+      image: "/src/assets/project/ahency.png",
+      githubUrl: "https://github.com/pradeepgaud/ahency",
+      demoUrl: "https://ahency.vercel.app/",
+      icon: <Edit3 className="w-6 h-6" />,
+      gradient: "from-purple-500/20 to-pink-600/20",
+    },
+    // Add more projects here when you have them
+    // {
+    //   title: "E-Commerce Store",
+    //   description:
+    //     "A full-featured e-commerce platform with shopping cart, payment integration, user authentication, and admin dashboard for managing products and orders.",
+    //   image: "/public/project/ecommerce.png",
+    //   githubUrl: "https://github.com/pradeepgaud/ecommerce",
+    //   demoUrl: "https://ecommerce-demo.vercel.app/",
+    //   icon: <Code className="w-6 h-6" />,
+    //   gradient: "from-orange-500/20 to-red-600/20",
+    // },
+    // {
+    //   title: "Task Management",
+    //   description:
+    //     "A collaborative task management application with real-time updates, team collaboration features, and progress tracking built with React and Socket.io",
+    //   image: "/public/project/taskmanager.png",
+    //   githubUrl: "https://github.com/pradeepgaud/taskmanager",
+    //   demoUrl: "https://taskmanager-demo.vercel.app/",
+    //   icon: <MessageSquare className="w-6 h-6" />,
+    //   gradient: "from-teal-500/20 to-green-600/20",
+    // }
   ];
+
+  // Show only first 3 projects initially
+  const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
 
   return (
     <div
@@ -72,7 +108,7 @@ function Project() {
 
         {/* Enhanced Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <div
               key={index}
               className="group relative bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-500 hover:transform hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-blue-500/25 animate-fade-in-up"
@@ -84,16 +120,33 @@ function Project() {
 
               <div className="relative z-10">
                 {/* Enhanced Project Image */}
-                <div className="relative overflow-hidden rounded-xl sm:rounded-2xl mb-6 sm:mb-8 bg-gradient-to-br from-gray-800 via-gray-900 to-black h-40 sm:h-52 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-500">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`}
-                  ></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="relative z-10 text-white/80 transform group-hover:scale-110 transition-transform duration-500 drop-shadow-lg">
-                    {React.cloneElement(project.icon, {
-                      className: "w-8 h-8 sm:w-12 sm:h-12",
-                    })}
+                <div className="relative overflow-hidden rounded-xl sm:rounded-2xl mb-6 sm:mb-8 bg-gradient-to-br from-gray-800 via-gray-900 to-black h-40 sm:h-52 group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-500">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      // Fallback to icon if image fails to load
+                      e.target.style.display = "none";
+                      e.target.nextSibling.style.display = "flex";
+                    }}
+                  />
+
+                  {/* Fallback icon display (hidden by default) */}
+                  <div className="absolute inset-0 hidden items-center justify-center">
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`}
+                    ></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="relative z-10 text-white/80 transform group-hover:scale-110 transition-transform duration-500 drop-shadow-lg">
+                      {React.cloneElement(project.icon, {
+                        className: "w-8 h-8 sm:w-12 sm:h-12",
+                      })}
+                    </div>
                   </div>
+
+                  {/* Image overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   {/* Floating particles effect */}
                   <div className="absolute inset-0 overflow-hidden">
@@ -135,7 +188,10 @@ function Project() {
                       href={project.demoUrl}
                       className="flex items-center justify-center sm:justify-start gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-purple-600/20 to-pink-600/20 hover:from-purple-600/40 hover:to-pink-600/40 border border-purple-500/30 hover:border-pink-400/50 rounded-lg sm:rounded-xl text-white transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 backdrop-blur-sm text-sm sm:text-base"
                     >
-                      <ExternalLink size={16} className="sm:w-[18px] sm:h-[18px]" />
+                      <ExternalLink
+                        size={16}
+                        className="sm:w-[18px] sm:h-[18px]"
+                      />
                       <span className="font-medium">Demo</span>
                     </a>
                   </div>
@@ -148,13 +204,22 @@ function Project() {
           ))}
         </div>
 
-        {/* Enhanced Bottom CTA */}
+        {/* Enhanced Bottom CTA - Show/Hide More Projects Button */}
         <div className="text-center mt-12 sm:mt-20">
-          <div className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full text-white font-semibold hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 cursor-pointer animate-bounce-gentle backdrop-blur-sm border border-white/10 text-sm sm:text-base">
+          <button
+            onClick={() => setShowAllProjects(!showAllProjects)}
+            className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full text-white font-semibold hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 animate-bounce-gentle backdrop-blur-sm border border-white/10 text-sm sm:text-base"
+          >
             <Github size={18} className="sm:w-[22px] sm:h-[22px]" />
-            <span>View More Projects</span>
-            <div className="w-2 h-2 bg-white/80 rounded-full animate-pulse"></div>
-          </div>
+            <span>
+              {showAllProjects ? 'Show Less Projects' : 'View More Projects'}
+            </span>
+            {showAllProjects ? (
+              <ChevronUp size={18} className="sm:w-[22px] sm:h-[22px]" />
+            ) : (
+              <ChevronDown size={18} className="sm:w-[22px] sm:h-[22px]" />
+            )}
+          </button>
         </div>
       </div>
 

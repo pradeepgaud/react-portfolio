@@ -1,5 +1,5 @@
 import React from "react";
-import profileImg from "../../public/home.jpg"; // replace with your image path
+// import profileImg from "../../public/home.jpg"; // replace with your image path
 import Skills from "../Components/Skills";
 import About from "./About";
 import Project from "./Project";
@@ -7,6 +7,31 @@ import Contact from "./Contact";
 import Footer from "../Components/Footer";
 
 function Home() {
+  // Handle CV download
+  const handleDownloadCV = () => {
+    // Replace 'cv.pdf' with your actual CV file path
+    const cvUrl = "/src/assets/resume/pradeep_gaud.pdf"; // Put your PDF in public folder as cv.pdf
+
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement("a");
+    link.href = cvUrl;
+    link.download = "pradeep_gaud.pdf"; // This will be the downloaded filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Handle get in touch - you can modify this as needed
+  const handleGetInTouch = () => {
+    // Scroll to contact section or open email
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    // Alternative: Open email client
+    // window.location.href = 'mailto:your.email@example.com';
+  };
+
   return (
     <>
       <section
@@ -21,9 +46,13 @@ function Home() {
               <div className="relative">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 p-1 ">
                   <img
-                    src={profileImg}
+                    src="/src/assets/home.jpg"
                     alt="Profile"
                     className="w-full h-full rounded-full object-cover"
+                    onError={(e) => {
+                      e.target.src =
+                        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMzc0MTUxIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSIyNSIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNNjAgMTYwYzAtMjIuMDkxIDE3LjkwOS00MCA0MC00MGgyMGMyMi4wOTEgMCA0MCAxNy45MDkgNDAgNDB2MjBINjB2LTIweiIgZmlsbD0iIzlDQTNBRiIvPgo8L3N2Zz4K";
+                    }}
                   />
                 </div>
                 {/* Decorative elements for mobile */}
@@ -48,12 +77,18 @@ function Home() {
               {/* Mobile Layout Buttons */}
               <div className="flex gap-3 pt-2">
                 {/* First Button - gradient bg */}
-                <button className="bg-gradient-to-r from-purple-400 to-pink-500 hover:opacity-90 transition-all duration-300 flex-1 py-3 rounded-md font-semibold text-sm text-white">
+                <button
+                  onClick={handleGetInTouch}
+                  className="bg-gradient-to-r from-purple-400 to-pink-500 hover:opacity-90 transition-all duration-300 flex-1 py-3 rounded-md font-semibold text-sm text-white hover:shadow-lg hover:shadow-purple-500/25"
+                >
                   Get In Touch
                 </button>
 
                 {/* Second Button - gradient border, hover -> gradient bg */}
-                <button className="relative group flex-1 py-3 rounded-md font-semibold text-sm text-white overflow-hidden">
+                <button
+                  onClick={handleDownloadCV}
+                  className="relative group flex-1 py-3 rounded-md font-semibold text-sm text-white overflow-hidden hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                >
                   {/* Gradient Border */}
                   <span className="absolute inset-0 rounded-md p-[2px] bg-gradient-to-r from-purple-400 to-pink-500">
                     {/* Inner Background (changes on hover) */}
@@ -84,12 +119,18 @@ function Home() {
 
               <div className="flex gap-5 pt-4">
                 {/* First Button - gradient bg */}
-                <button className="bg-gradient-to-r from-purple-400 to-pink-500 hover:opacity-90 transition-all duration-300 px-8 py-3 rounded-md font-semibold text-lg text-white">
+                <button
+                  onClick={handleGetInTouch}
+                  className="bg-gradient-to-r from-purple-400 to-pink-500 hover:opacity-90 transition-all duration-300 px-8 py-3 rounded-md font-semibold text-lg text-white hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
+                >
                   Get In Touch
                 </button>
 
                 {/* Second Button - gradient border, hover -> gradient bg */}
-                <button className="relative group px-8 py-3 rounded-md font-semibold text-lg text-white overflow-hidden">
+                <button
+                  onClick={handleDownloadCV}
+                  className="relative group px-8 py-3 rounded-md font-semibold text-lg text-white overflow-hidden hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300"
+                >
                   {/* Gradient Border */}
                   <span className="absolute inset-0 rounded-md p-[2px] bg-gradient-to-r from-purple-400 to-pink-500">
                     {/* Inner Background (changes on hover) */}
@@ -107,9 +148,13 @@ function Home() {
               <div className="relative">
                 <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500  p-2">
                   <img
-                    src={profileImg}
+                    src="/src/assets/home.jpg"
                     alt="Profile"
                     className="w-full h-full rounded-full object-cover"
+                    onError={(e) => {
+                      e.target.src =
+                        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMzc0MTUxIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSIyNSIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNNjAgMTYwYzAtMjIuMDkxIDE3LjkwOS00MCA0MC00MGgyMGMyMi4wOTEgMCA0MCAxNy45MDkgNDAgNDB2MjBINjB2LTIweiIgZmlsbD0iIzlDQTNBRiIvPgo8L3N2Zz4K";
+                    }}
                   />
                 </div>
                 {/* Decorative elements */}
@@ -120,7 +165,8 @@ function Home() {
           </div>
         </div>
       </section>
-      <About id="about" />
+
+      <About />
       <Skills />
       <Project />
       <Contact />
