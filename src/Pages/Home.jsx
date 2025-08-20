@@ -1,5 +1,5 @@
 import React from "react";
-// import profileImg from "../../public/home.jpg"; // replace with your image path
+import profileImg from "../assets/project/home.jpg";
 import Skills from "../Components/Skills";
 import About from "./About";
 import Project from "./Project";
@@ -46,7 +46,7 @@ function Home() {
               <div className="relative">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 p-1 ">
                   <img
-                    src="/src/assets/home.jpg"
+                    src={profileImg}
                     alt="Profile"
                     className="w-full h-full rounded-full object-cover"
                     onError={(e) => {
@@ -148,7 +148,7 @@ function Home() {
               <div className="relative">
                 <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500  p-2">
                   <img
-                    src="/src/assets/home.jpg"
+                    src={profileImg}
                     alt="Profile"
                     className="w-full h-full rounded-full object-cover"
                     onError={(e) => {

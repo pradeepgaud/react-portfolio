@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Github, ExternalLink, Code, MessageSquare, Edit3, ChevronDown, ChevronUp } from "lucide-react";
+import projectone from "../assets/project/gaur-booking.png";
+import projectwo from "../assets/project/baby-care.png";
+import projectthree from "../assets/project/authentication.png";
+import projectfor from "../assets/project/ahency.png";
 
 function Project() {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -9,7 +13,7 @@ function Project() {
       title: "Gaur-Booking",
       description:
         "A full-stack MERN booking platform where users can create, update, and delete listings, add ratings, and make bookings. Built with JWT authentication, secure login/logout, and role-based access. Admins can manage and even cancel bookings.",
-      image: "/src/assets/project/gaur-booking.png",
+      image: projectone,
       githubUrl: "https://github.com/pradeepgaud/gaur_booking",
       demoUrl: "https://gaur-booking-1.onrender.com/",
       icon: <MessageSquare className="w-6 h-6" />,
@@ -19,7 +23,7 @@ function Project() {
       title: "Baby-Care",
       description:
         "A MERN stack Baby-Care management app where admins can create, update, and delete events. Built with MongoDB, Express, React, and Node.js, providing a complete event management system with a secure backend and dynamic frontend",
-      image: "/src/assets/project/baby-care.png",
+       image: projectwo,
       githubUrl: "https://github.com/pradeepgaud/baby-care",
       demoUrl: "https://baby-care-1sjs.onrender.com/",
       icon: <Code className="w-6 h-6" />,
@@ -29,7 +33,7 @@ function Project() {
       title: "Authentication",
       description:
         "A secure MERN stack authentication system with JWT-based login/signup, bcrypt password hashing, and protected routes to ensure safe user access",
-      image: "/src/assets/project/authentication.png",
+      image: projectthree,
       githubUrl: "https://github.com/pradeepgaud/authentication",
       demoUrl: "https://authentication-gaur-tau.vercel.app/",
       icon: <Edit3 className="w-6 h-6" />,
@@ -39,7 +43,7 @@ function Project() {
       title: "Ahency",
       description:
         "A modern and visually appealing agency website built with React, featuring smooth animations, responsive design, and an engaging user interface for clients, Added smooth animations for better user engagement",
-      image: "/src/assets/project/ahency.png",
+      image: projectfor,
       githubUrl: "https://github.com/pradeepgaud/ahency",
       demoUrl: "https://ahency.vercel.app/",
       icon: <Edit3 className="w-6 h-6" />,
