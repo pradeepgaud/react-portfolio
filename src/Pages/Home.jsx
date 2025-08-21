@@ -172,6 +172,8 @@ function Home() {
         </div>
       </section>
 
+      
+
       <About />
       <Skills />
       <Project />
