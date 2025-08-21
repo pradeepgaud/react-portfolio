@@ -20,7 +20,7 @@ function Home() {
   };
 
   // Alternative Method 2: Using public folder (अगर public/resume/pradeep_gaud.pdf में file है)
-  const handleDownloadCVAlternativeone = () => {
+  const handleDownloadCVAlternative = () => {
     const link = document.createElement("a");
     link.href = "/resume/pradeep_gaud.pdf"; // public folder से relative path
     link.download = "pradeep_gaud.pdf";
@@ -41,7 +41,8 @@ function Home() {
     <>
       <section
         id="home"
-        className=" bg-black text-white min-h-screen flex items-center justify-center px-4 md:px-16"
+        className=" bg-black text-white flex items-center justify-center py-[80px] px-4 md:px-16 h-auto md:min-h-screen
+"
       >
         <div className="container mx-auto max-w-6xl">
           {/* Mobile Layout */}
