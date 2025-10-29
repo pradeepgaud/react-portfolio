@@ -18,7 +18,7 @@ function Home() {
     link.click();
     document.body.removeChild(link);
   };
-
+// dummy 
   // Alternative Method 2: Using public folder (अगर public/resume/pradeep_gaud.pdf में file है)
   const handleDownloadCVAlternative = () => {
     const link = document.createElement("a");
@@ -172,7 +172,7 @@ function Home() {
         </div>
       </section>
 
-      
+
 
       <About />
       <Skills />
