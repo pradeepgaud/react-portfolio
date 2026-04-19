@@ -434,6 +434,8 @@ import React, { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
 import projectone from "../assets/project/gaur-booking.png";
 import projectwo from "../assets/project/baby-care.png";
+import EmailMarketing from "../assets/project/EmailMarketing.png";
+import BM from "../assets/project/bm.png";
 import projectthree from "../assets/project/authentication.png";
 import projectfor from "../assets/project/ahency.png";
 import syrish from "../assets/project/syrish.png";
@@ -463,28 +465,28 @@ function ProductsSection() {
     },
     {
       id: 2,
-      title: "Baby-Care",
+      title: "Email Marketing System",
       category: "mernstack",
-      tagline: "Baby Care",
+      tagline: "Bulk Email Sender & Campaign Tool(not mobile responsive)",
       description:
-        "A MERN stack Baby-Care management app where admins can create, update, and delete events. Built with MongoDB, Express, React, and Node.js, providing a complete event management system with a secure backend and dynamic frontend",
-      image: projectwo,
+        "A full-featured Email Marketing application built using the MERN stack, enabling admins to manage and send bulk email campaigns efficiently. Supports HTML, image, and ZIP-based email templates with dynamic sender configuration (custom From Email and Reply-To). Integrated SMTP-based email delivery system with role-based access (Admin/Sub-Admin). Designed for high-volume email sending and campaign management. Note: Currently optimized for desktop view only (not mobile responsive).",
+      image: EmailMarketing,
+      demoUrl: "https://email-marketing-3rzc.vercel.app/",
+      githubUrl: "https://github.com/pradeepgaud/email-marketing",
+    },
+    {
+      id: 3,
+      title: "Brandmingo",
+      category: "mernstack",
+      tagline: "Create, Connect & Convert",
+      description:
+        "A modern and creative UI-based web application built using React, focused on delivering a clean and engaging user experience. Designed with a responsive layout for all devices, smooth navigation, and visually appealing components for real-world usability.",
+      image: BM,
       demoUrl: "https://baby-care-1sjs.onrender.com/",
       githubUrl: "https://github.com/pradeepgaud/baby-care",
     },
     {
-      id: 3,
-      title: "Authentication",
-      category: "mernstack",
-      tagline: "User Authentication ",
-      description:
-        "A secure MERN stack authentication system with JWT-based login/signup, bcrypt password hashing, and protected routes to ensure safe user access",
-      image: projectthree,
-      demoUrl: "https://authentication-gaur-tau.vercel.app/",
-      githubUrl: "https://github.com/pradeepgaud/authentication",
-    },
-    {
-      id: 4,
+      id: 6,
       title: "Ahency",
       category: "mernstack",
       tagline: "Marketing Indormative Websites",
@@ -496,7 +498,30 @@ function ProductsSection() {
       githubUrl: "https://github.com/pradeepgaud/ahency",
     },
     {
+      id: 4,
+      title: "Baby-Care",
+      category: "mernstack",
+      tagline: "Baby Care",
+      description:
+        "A MERN stack Baby-Care management app where admins can create, update, and delete events. Built with MongoDB, Express, React, and Node.js, providing a complete event management system with a secure backend and dynamic frontend",
+      image: projectwo,
+      demoUrl: "https://baby-care-1sjs.onrender.com/",
+      githubUrl: "https://github.com/pradeepgaud/baby-care",
+    },
+    {
       id: 5,
+      title: "Authentication",
+      category: "mernstack",
+      tagline: "User Authentication ",
+      description:
+        "A secure MERN stack authentication system with JWT-based login/signup, bcrypt password hashing, and protected routes to ensure safe user access",
+      image: projectthree,
+      demoUrl: "https://authentication-gaur-tau.vercel.app/",
+      githubUrl: "https://github.com/pradeepgaud/authentication",
+    },
+
+    {
+      id: 7,
       title: "Syrish",
       category: "shopify",
       tagline: "Elevating Fashion Through Seamless Ecommerce",
@@ -507,7 +532,7 @@ function ProductsSection() {
       githubUrl: "#",
     },
     {
-      id: 6,
+      id: 8,
       title: "vishalimitations",
       category: "shopify",
       tagline: "Crafting Elegance in Every Detail",
@@ -518,7 +543,7 @@ function ProductsSection() {
       githubUrl: "#",
     },
     {
-      id: 7,
+      id: 9,
       title: "ayurvital",
       category: "shopify",
       tagline: "Empowering Wellness Through Nature",
@@ -529,7 +554,7 @@ function ProductsSection() {
       githubUrl: "#",
     },
     {
-      id: 8,
+      id: 10,
       title: "skininsight",
       category: "shopify",
       tagline: "Elevating Skincare Through Ecommerce",
@@ -540,7 +565,7 @@ function ProductsSection() {
       githubUrl: "#",
     },
     {
-      id: 9,
+      id: 11,
       title: "rijovabiotech",
       category: "wordpress",
       tagline: "Driving Innovation in Biotechnology",
@@ -551,7 +576,7 @@ function ProductsSection() {
       githubUrl: "#",
     },
     {
-      id: 10,
+      id: 12,
       title: "romaninfra",
       category: "wordpress",
       tagline: "Building Strong Digital Foundations",
@@ -562,7 +587,7 @@ function ProductsSection() {
       githubUrl: "#",
     },
     {
-      id: 11,
+      id: 13,
       title: "syrakaltech",
       category: "wordpress",
       tagline: "Innovating Through Technology",
