@@ -50,8 +50,8 @@ function ProductsSection() {
       description:
         "A modern and creative UI-based web application built using React, focused on delivering a clean and engaging user experience. Designed with a responsive layout for all devices, smooth navigation, and visually appealing components for real-world usability.",
       image: BM,
-      demoUrl: "https://baby-care-1sjs.onrender.com/",
-      githubUrl: "https://github.com/pradeepgaud/baby-care",
+      demoUrl: "https://brandmingo-six.vercel.app/",
+      githubUrl: "https://github.com/pradeepgaud/brandmingo",
     },
     {
       id: 6,
